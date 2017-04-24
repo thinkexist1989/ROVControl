@@ -301,3 +301,22 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# 忽略Eigen、HCNetSDK、iPlotX、inc文件夹下内容
+ROVControl/Eigen/
+ROVControl/HCNetSDK/
+ROVControl/iPlotX/
+ROVControl/inc/
+ROVControl/Debug/
+Debug/
+
+
+#忽略所有图标文件
+*.ico
+*.png
+*.psd
+*.bmp
+
+#忽略所有库文件
+*.lib

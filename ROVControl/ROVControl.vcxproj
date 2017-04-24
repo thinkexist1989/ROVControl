@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D603A150-F20C-45CC-B2F3-99F686FAF6B0}</ProjectGuid>
+    <RootNamespace>ROVControl</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(DXSDK_DIR)Utilities\bin\x86;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\LuoYang\Desktop\ROVControl\ROVControl\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>dinput8.lib;dxguid.lib;comctl32.lib;dwmapi.lib;HCNetSDK.lib;PlayCtrl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\hit.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\myicon.ico" />
+    <None Include="res\ROVControl.ico" />
+    <None Include="res\ROVControl.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="chartofloat.h" />
+    <ClInclude Include="DIJoystick.h" />
+    <ClInclude Include="DlgResizeHelper.h" />
+    <ClInclude Include="GetPidDlg.h" />
+    <ClInclude Include="GlobalVar.h" />
+    <ClInclude Include="HCNetSDK\DataType.h" />
+    <ClInclude Include="HCNetSDK\DecodeCardSdk.h" />
+    <ClInclude Include="HCNetSDK\HCNetSDK.h" />
+    <ClInclude Include="HCNetSDK\plaympeg4.h" />
+    <ClInclude Include="iangulargaugex1.h" />
+    <ClInclude Include="icompassx1.h" />
+    <ClInclude Include="iledarrow.h" />
+    <ClInclude Include="ilineargaugex1.h" />
+    <ClInclude Include="iPlotX\font.h" />
+    <ClInclude Include="iPlotX\iplotannotationx.h" />
+    <ClInclude Include="iPlotX\iplotaxisx.h" />
+    <ClInclude Include="iPlotX\iplotchannelx.h" />
+    <ClInclude Include="iPlotX\iplotdatacursorx.h" />
+    <ClInclude Include="iPlotX\iplotdataviewx.h" />
+    <ClInclude Include="iPlotX\iplotlabelx.h" />
+    <ClInclude Include="iPlotX\iplotlegendx.h" />
+    <ClInclude Include="iPlotX\iplotlimitx.h" />
+    <ClInclude Include="iPlotX\iplottoolbarx.h" />
+    <ClInclude Include="iPlotX\iplotx.h" />
+    <ClInclude Include="iPlotX\picture.h" />
+    <ClInclude Include="irotationdisplay.h" />
+    <ClInclude Include="iswitchled_deep.h" />
+    <ClInclude Include="JoySickDlg.h" />
+    <ClInclude Include="LoadingDlg.h" />
+    <ClInclude Include="LoginDlg.h" />
+    <ClInclude Include="MainDlg.h" />
+    <ClInclude Include="MotorTestDlg.h" />
+    <ClInclude Include="pid.h" />
+    <ClInclude Include="PIDCurveDlg.h" />
+    <ClInclude Include="PIDDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ROVControl.h" />
+    <ClInclude Include="SetPidDlg.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TcpServeDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="chartofloat.cpp" />
+    <ClCompile Include="DIJoystick.cpp" />
+    <ClCompile Include="DlgResizeHelper.cpp" />
+    <ClCompile Include="GetPidDlg.cpp" />
+    <ClCompile Include="GlobalVar.cpp" />
+    <ClCompile Include="iangulargaugex1.cpp" />
+    <ClCompile Include="icompassx1.cpp" />
+    <ClCompile Include="iledarrow.cpp" />
+    <ClCompile Include="ilineargaugex1.cpp" />
+    <ClCompile Include="iPlotX\font.cpp" />
+    <ClCompile Include="iPlotX\iplotannotationx.cpp" />
+    <ClCompile Include="iPlotX\iplotaxisx.cpp" />
+    <ClCompile Include="iPlotX\iplotchannelx.cpp" />
+    <ClCompile Include="iPlotX\iplotdatacursorx.cpp" />
+    <ClCompile Include="iPlotX\iplotdataviewx.cpp" />
+    <ClCompile Include="iPlotX\iplotlabelx.cpp" />
+    <ClCompile Include="iPlotX\iplotlegendx.cpp" />
+    <ClCompile Include="iPlotX\iplotlimitx.cpp" />
+    <ClCompile Include="iPlotX\iplottoolbarx.cpp" />
+    <ClCompile Include="iPlotX\iplotx.cpp" />
+    <ClCompile Include="iPlotX\picture.cpp" />
+    <ClCompile Include="irotationdisplay.cpp" />
+    <ClCompile Include="iswitchled_deep.cpp" />
+    <ClCompile Include="JoySickDlg.cpp" />
+    <ClCompile Include="LoadingDlg.cpp" />
+    <ClCompile Include="LoginDlg.cpp" />
+    <ClCompile Include="MainDlg.cpp" />
+    <ClCompile Include="MotorTestDlg.cpp" />
+    <ClCompile Include="pid.cpp" />
+    <ClCompile Include="PIDCurveDlg.cpp" />
+    <ClCompile Include="PIDDlg.cpp" />
+    <ClCompile Include="ROVControl.cpp" />
+    <ClCompile Include="SetPidDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TcpServeDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ROVControl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\setting.ico" />
+    <Image Include="..\Debug\ico.ico" />
+    <Image Include="..\Debug\maidou.ico" />
+    <Image Include="..\Debug\rov.bmp" />
+    <Image Include="..\Debug\rov.png" />
+    <Image Include="..\Debug\ROVICON.bmp" />
+    <Image Include="res\ico.ico" />
+    <Image Include="res\maidou.ico" />
+    <Image Include="res\rov.bmp" />
+    <Image Include="res\rov.png" />
+    <Image Include="res\ROVICON.bmp" />
+    <Image Include="res\setting.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties _x007B_C5412DE7-2E2F-11D3-85BF-00105AC8B715_x007D_="CIlineargaugex1" _x007B_C5412DD5-2E2F-11D3-85BF-00105AC8B715_x007D_="CIangulargaugex1" _x007B_0A36238C-2E5E-11D3-85BF-00105AC8B715_x007D_="CIswitchled_deep" RESOURCE_FILE="ROVControl.rc" _x007B_60B74EE4-0DFD-11D4-85C4-00A0CC3A58C9_x007D_="CIcompassx1" _x007B_625E79CE-BD64-4A35-A7B5-F70F97D4F227_x007D_="CIslidingcompassx1" _x007B_C2557646-8194-11D3-85C2-00105AC8B715_x007D_="CIledarrow" _x007B_0E39CE84-DCE4-11D3-85C3-00A0CC3A58C9_x007D_="CIrotationdisplay" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
